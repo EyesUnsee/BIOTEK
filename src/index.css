@@ -1,0 +1,185 @@
+/* === BIOTEK QUIZ MODERN UI === */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* BACKGROUND GRADIENT ANIMÉ */
+body {
+  background: linear-gradient(135deg, #4f46e5, #9333ea, #0ea5e9);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* CARD */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  padding: 30px;
+  width: 90%;
+  max-width: 520px;
+  text-align: center;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.6s ease;
+}
+
+/* TITRES */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+  color: #fff;
+}
+
+.form-group label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border-color: #22d3ee;
+}
+
+/* BUTTONS */
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #22d3ee;
+  color: #0f172a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #38bdf8;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background: #6b7280;
+  cursor: not-allowed;
+}
+
+/* ACTIVE STATE */
+button.active {
+  background: #facc15;
+  color: #0f172a;
+}
+
+/* CHOIX */
+.choice {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+/* ANSWERS */
+.answers button {
+  width: 100%;
+  margin-top: 8px;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid transparent;
+  color: #fff;
+  text-align: left;
+  padding: 12px;
+}
+
+.answers button:hover {
+  border-color: #22d3ee;
+}
+
+.answers button.active {
+  background: rgba(255,255,255,0.3);
+  border-color: #facc15;
+}
+
+/* LOADING */
+.loading-screen {
+  text-align: center;
+  color: #fff;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+.highlight {
+  color: #facc15;
+  font-weight: 600;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}
+.answers button.correct {
+  background: #22c55e; /* Vert */
+  color: #fff;
+}
+
+.answers button.incorrect {
+  background: #ef4444; /* Rouge */
+  color: #fff;
+}
